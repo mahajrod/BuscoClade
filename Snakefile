@@ -40,13 +40,13 @@ astral_tree = "{0}.{1}.astral.treefile".format(config["alignment_file_prefix"], 
 if config["busco_dataset_path"]:
     busco_dataset_path = Path(config["busco_dataset_path"])
     if busco_dataset_path.exists():
-        print("Path to BUSCO dataset was set and exists. Ignoring 'busco_lineage' even if it was set")
+        print("Path to BUSCO dataset was set in the config and exists. Ignoring 'busco_lineage' even if it was set")
     else:
         raise ValueError("ERROR!!! 'busco_dataset_path': {0} does not exist!".format(config["busco_dataset_path"]))
 else:
     if not config["busco_lineage"]:
-        raise ValueError("ERROR!!! Neither 'busco_dataset_path' nor 'busco_lineage' was set!")
-    print("Only 'busco_lineage': {0} was set. Corresponding BUSCO dataset will be downloaded.".format(config["busco_lineage"]))
+        raise ValueError("ERROR!!! Neither 'busco_dataset_path' nor 'busco_lineage' was set in the config!")
+    print("Only 'busco_lineage': {0} was set in the config. Corresponding BUSCO dataset will be downloaded.".format(config["busco_lineage"]))
 
 
 # ---- Necessary functions ----
