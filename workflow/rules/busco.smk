@@ -1,7 +1,7 @@
 
 rule busco5_download:
     output:
-        lineage_dir=directory(busco_download_dir_path / config["busco_lineage"]),
+        lineage_dir=directory(busco_download_dir_path / "lineages" / config["busco_lineage"]),
     params:
         busco_lineage=config["busco_lineage"],
         busco_download_dir=busco_download_dir_path
@@ -53,14 +53,14 @@ if config['gene_prediction_tool'] == "metaeuk":
             "mkdir -p {output.busco_outdir}; cd {output.busco_outdir}; "
             "busco -m {params.mode} -i {input.fasta} -c {threads} "
             "-l {input.busco_dataset_path} -o {params.output_prefix} 1>../../../{log.std} 2>&1; "
-            "mv {params.output_prefix}/* . 1>../../../{log.std} 2>&1; "
-            "rm -r {params.output_prefix}/ 1>../../../{log.std} 2>&1; "
+            "mv {params.output_prefix}/* . 1>>../../../{log.std} 2>&1; "
+            "rm -r {params.output_prefix}/ 1>>../../../{log.std} 2>&1; "
             "rm -r busco_sequences/ 1>../../../{log.std} 2>&1; " # empty directory
-            "mv run*/* . 1>../../../{log.std} 2>&1; "
-            "rm -r run* 1>../../../{log.std} 2>&1; "
-            "mv full_table.tsv full_table_{params.output_prefix}.tsv 1>../../../{log.std} 2>&1; "
+            "mv run*/* . 1>>../../../{log.std} 2>&1; "
+            "rm -r run* 1>>../../../{log.std} 2>&1; "
+            "mv full_table.tsv full_table_{params.output_prefix}.tsv 1>>../../../{log.std} 2>&1; "
             "mv missing_busco_list.tsv missing_busco_list_{params.output_prefix}.tsv 1>../../../{log.std} 2>&1; "
-            "mv short_summary.txt short_summary_{params.output_prefix}.txt 1>../../../{log.std} 2>&1; "
+            "mv short_summary.txt short_summary_{params.output_prefix}.txt 1>>../../../{log.std} 2>&1; "
 
 elif config['gene_prediction_tool'] == "augustus":
     rule busco_augustus:
