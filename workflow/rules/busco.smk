@@ -25,7 +25,7 @@ rule busco5_download:
 if config['gene_prediction_tool'] == "metaeuk":
     rule busco_metaeuk:
         input:
-            fasta=genome_dir_path / "{species}.fasta",
+            fasta=(genome_dir_path / "{species}.fasta").resolve(),
             busco_dataset_path=config["busco_dataset_path"] if config["busco_dataset_path"] else rules.busco5_download.output.lineage_dir
         output:
             busco_outdir=directory(busco_dir_path / "{species}"),
@@ -65,7 +65,7 @@ if config['gene_prediction_tool'] == "metaeuk":
 elif config['gene_prediction_tool'] == "augustus":
     rule busco_augustus:
         input:
-            fasta=genome_dir_path / "{species}.fasta",
+            fasta=(genome_dir_path / "{species}.fasta").resolve(),
             busco_dataset_path=config["busco_dataset_path"] if config["busco_dataset_path"] else rules.busco5_download.output.lineage_dir
         output:
             busco_outdir=directory(busco_dir_path / "{species}"),
