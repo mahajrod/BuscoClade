@@ -66,7 +66,7 @@ elif config['gene_prediction_tool'] == "augustus":
     rule busco_augustus:
         input:
             fasta=(genome_dir_path / "{species}.fasta").resolve(),
-            busco_dataset_path=config["busco_dataset_path"] if config["busco_dataset_path"] else rules.busco5_download.output.lineage_dir
+            busco_dataset_path=Path(config["busco_dataset_path"]).resolve() if config["busco_dataset_path"] else rules.busco5_download.output.lineage_dir
         output:
             busco_outdir=directory(busco_dir_path / "{species}"),
             single_copy_busco_sequences=directory(busco_dir_path / "{species}/single_copy_busco_sequences"),
