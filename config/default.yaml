@@ -22,6 +22,7 @@ draw_phylotrees: True
 gene_prediction_tool: "metaeuk" # 'metaeuk' or 'augustus'
 augustus_species: "human" # used only if 'gene_prediction_tool' == 'augustus'
 busco_dataset_path: ""
+"busco_lineage": ""
 busco_mode: "genome"
 busco_params: ""
 # ---- Alignment ----
@@ -56,6 +57,7 @@ iqtree_tree_visualization_params: "" # --outgroup homo_sapiens
 genome_dir: "genomes" # use an absolute path
 output_dir: "results"
 busco_dir: "busco"
+"busco_download_dir": "busco_downloads"
 species_ids_dir: "ids/species_ids"
 common_ids_dir: "ids/"
 merged_sequences_dir: "ids/merged_sequences"
@@ -71,6 +73,7 @@ benchmark_dir: "benchmarks"
 
 # ---- Resources ----
 # ---- Tool threads ----
+"busco5_download_threads": 1
 busco_threads: 40
 species_ids_threads: 1
 common_ids_threads: 1
@@ -87,6 +90,7 @@ astral_threads: 4
 visualization_threads: 1
 
 # ---- Tool memory ----
+"busco5_download_mem_mb": 3000
 busco_mem_mb: 80000
 species_ids_mem_mb: 5000
 common_ids_mem_mb: 5000
@@ -103,6 +107,7 @@ astral_mem_mb: 10000
 visualization_mem_mb: 2000
 
 # ---- Tool time ----
+"busco5_download_time": "01:00:00"
 busco_time: "150:00:00"
 species_ids_time: "01:00:00"
 common_ids_time: "01:00:00"
