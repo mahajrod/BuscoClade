@@ -10,7 +10,7 @@ rule busco5_download:
         cluster_log=cluster_log_dir_path / "busco5_download.cluster.log",
         cluster_err=cluster_log_dir_path / "busco5_download.cluster.err"
     benchmark:
-        output_dict["benchmark"] / "busco5_download.benchmark.txt"
+        benchmark_dir_path /  "busco5_download.benchmark.txt"
     conda:
         "../../%s" % config["conda_config"]
     resources:
