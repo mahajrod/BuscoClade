@@ -1,7 +1,7 @@
 
 rule busco5_download:
     output:
-        lineage_dir=directory(busco_download_dir_path / "lineages" / config["busco_lineage"]),
+        lineage_dir=directory((busco_download_dir_path / "lineages" / config["busco_lineage"]).resolve()),
     params:
         busco_lineage=config["busco_lineage"],
         busco_download_dir=busco_download_dir_path
