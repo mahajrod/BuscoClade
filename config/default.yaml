@@ -71,7 +71,7 @@ benchmark_dir: "benchmarks"
 
 # ---- Resources ----
 # ---- Tool threads ----
-busco_threads: 16
+busco_threads: 40
 species_ids_threads: 1
 common_ids_threads: 1
 merged_sequences_threads: 1
@@ -79,15 +79,15 @@ mafft_threads: 1
 prank_threads: 1
 gblocks_threads: 1
 trimal_threads: 1
-iqtree_threads: 16
-mrbayes_threads: 16
+iqtree_threads: 40
+mrbayes_threads: 40
 iqtree_per_fna_threads: 4
 concat_newick_files_threads: 1
 astral_threads: 4
 visualization_threads: 1
 
 # ---- Tool memory ----
-busco_mem_mb: 40000
+busco_mem_mb: 80000
 species_ids_mem_mb: 5000
 common_ids_mem_mb: 5000
 merged_sequences_mem_mb: 5000
