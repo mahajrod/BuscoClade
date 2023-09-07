@@ -1,4 +1,4 @@
-jobs: 100
+jobs: 150
 reason: True
 use-conda: True
 latency-wait: 60
