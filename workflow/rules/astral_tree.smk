@@ -29,7 +29,7 @@ if "astral" in config:
         threads:
             config["iqtree_per_fna_threads"]
         shell:
-            "mkdir -p {params.outdir}; iqtree -nt {threads} -s {input} "
+            "mkdir -p {params.outdir}; iqtree -keep-ident -nt {threads} -s {input} "
             "--prefix {params.prefix} {params.options} 1> {log.std} 2>&1; "
 
     rule concat_newick_files:
