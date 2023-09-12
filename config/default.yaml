@@ -96,7 +96,7 @@ species_ids_mem_mb: 5000
 common_ids_mem_mb: 5000
 merged_sequences_mem_mb: 5000
 mafft_mem_mb: 15000
-prank_mem_mb: 15000
+prank_mem_mb: 30000
 gblocks_mem_mb: 15000
 trimal_mem_mb: 15000
 iqtree_mem_mb: 50000
