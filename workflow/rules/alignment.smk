@@ -19,7 +19,7 @@ if "dna_alignment" in config:
             resources:
                 cpus=config["prank_threads"],
                 time=config["prank_time"],
-                mem_mb=config["prank_mem_mb"]
+                mem_mb=lambda wildcards, attempt: attempt * config["prank_mem_mb"]
             threads:
                 config["prank_threads"]
             shell:
@@ -72,7 +72,7 @@ if "protein_alignment" in config:
             resources:
                 cpus=config["prank_threads"],
                 time=config["prank_time"],
-                mem_mb=config["prank_mem_mb"]
+                mem_mb=lambda wildcards, attempt: attempt * config["prank_mem_mb"]
             threads:
                 config["prank_threads"]
             shell:
