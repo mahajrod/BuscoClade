@@ -3,7 +3,7 @@ ete3_conda_config: "workflow/envs/ete3_conda.yaml"
 
 # ---- Pipeline configuration ---- (False to disable)
 # ---- Alignment ----
-dna_alignment: 'prank'       # 'prank' or 'mafft'
+#dna_alignment: 'prank'       # 'prank' or 'mafft'
 protein_alignment: 'mafft'   # 'prank' or 'mafft'
 # ---- Filtration ----
 dna_filtration: 'gblocks' # or 'trimal'
