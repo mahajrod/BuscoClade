@@ -102,10 +102,10 @@ if ("protein_alignment" in config) and (not config["skip_protein_alignment"]):
                     output_files.append(iqtree_dir_path / "faa" / f"{fasta_protein_filename}.treefile")
                     if config["draw_phylotrees"]:
                         output_files.append(iqtree_dir_path / "faa" / f"{fasta_protein_filename}.length_and_support_tree.svg")
-if ("mrbayes_dna" in config) and (not skip_dna_alignment):
+if ("mrbayes_dna" in config) and (not config["skip_dna_alignment"]):
     if config["mrbayes_dna"]: # to-do: upgrade
         output_files.append(mrbayes_dir_path / "fna")
-if ("mrbayes_protein" in config) and (not skip_protein_alignment):
+if ("mrbayes_protein" in config) and (not config["skip_protein_alignment"]):
     if config["mrbayes_protein"]:
         output_files.append(mrbayes_dir_path / "faa")
 
