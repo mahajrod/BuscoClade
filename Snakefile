@@ -74,7 +74,7 @@ output_files = [
         species_ids_dir_path / "unique_species_ids.png",
 ]
 
-if ("dna_alignment" in config) and (not skip_dna_alignment):
+if ("dna_alignment" in config) and (not config["skip_dna_alignment"]):
     if config["dna_alignment"]:
         output_files.append(lambda w: expand_fna_from_merged_sequences(w, alignments_dir_path / "fna" / "{N}.fna"))
         if "dna_filtration" in config:
@@ -90,7 +90,7 @@ if ("dna_alignment" in config) and (not skip_dna_alignment):
                     output_files.append(astral_dir_path / astral_tree)
                     if config["draw_phylotrees"]:
                         output_files.append(astral_dir_path / f"{astral_tree}.svg")
-if ("protein_alignment" in config) and (not skip_protein_alignment):
+if ("protein_alignment" in config) and (not config["skip_protein_alignment"]):
     if config["protein_alignment"]:
         output_files.append(lambda w: expand_faa_from_merged_sequences(w, alignments_dir_path / "faa" / "{N}.faa"))
         if "protein_filtration" in config:
